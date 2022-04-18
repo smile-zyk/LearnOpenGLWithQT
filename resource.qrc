@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>LearnOpenGL.png</file>
+    </qresource>
+    <qresource prefix="/shader">
+        <file>fragment.glsl</file>
+        <file>vertex.glsl</file>
+        <file>lightFragment.glsl</file>
+        <file>lightVertex.glsl</file>
+    </qresource>
+    <qresource prefix="/image">
+        <file>wall.jpg</file>
+        <file>container2.png</file>
+        <file>container2_specular.png</file>
+    </qresource>
+</RCC>

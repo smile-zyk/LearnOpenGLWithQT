@@ -16,19 +16,34 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    camera.cpp \
+    learnopenglwidget.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    mesh.cpp \
+    model.cpp
 
 HEADERS += \
-    mainwindow.h
+    camera.h \
+    learnopenglwidget.h \
+    mainwindow.h \
+    mesh.h \
+    model.h
 
 FORMS += \
     mainwindow.ui
 
 RESOURCES += \
     qdarkstyle/dark/style.qrc\
+    resource.qrc
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+win32:CONFIG(release, debug|release): LIBS += -LE:/lib/assimp/bin/ -lassimp-vc142-mt
+else:win32:CONFIG(debug, debug|release): LIBS += -LE:/lib/assimp/bin/ -lassimp-vc142-mtd
+
+INCLUDEPATH += E:/lib/assimp/include
+DEPENDPATH += E:/lib/assimp/include
